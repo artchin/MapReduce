@@ -3,7 +3,7 @@
 OUT_DIR=/user/instruments2025a07/output
 NUM_REDUCERS=50
 
-hdfs dfs -rm -r -skipTrash ${OUT_DIR} > /dev/null 2>&1
+hdfs dfs -rm -r -skipTrash ${OUT_DIR} > /dev/null
 
 yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
     -D mapred.job.name="Mixing IDs_Arthur_Chupakhin" \
