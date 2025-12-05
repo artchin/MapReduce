@@ -1,9 +1,8 @@
+
 #!/usr/bin/env bash
 
-OUT_DIR=/user/instruments2025a07/output_$(date +%s%N)
-NUM_REDUCERS=5
-
-hdfs dfs -rm -r -skipTrash ${OUT_DIR} > /dev/null
+OUT_DIR=/user/instruments2025a07/output_$(date +%Y%m%d_%H%M%S)
+NUM_REDUCERS=4
 
 yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
     -D mapred.job.name="Mixing IDs_Arthur_Chupakhin" \
@@ -12,6 +11,8 @@ yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
     -mapper mapper.py \
     -reducer reducer.py \
     -input /data/ids \
-    -output ${OUT_DIR} > /dev/null
+    -output ${OUT_DIR} 
 
-hdfs dfs -cat ${OUT_DIR}/part-00000 | head -n 50
+hdfs dfs -cat ${OUT_DIR}/part-* | head -n 50
+
+
