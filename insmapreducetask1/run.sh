@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OUT_DIR=/user/instruments2025a007/output
+OUT_DIR=/user/instruments2025a07/output
 NUM_REDUCERS=8
 
 hdfs dfs -rm -r -skipTrash ${OUT_DIR} > /dev/null
