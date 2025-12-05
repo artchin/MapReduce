@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 OUT_DIR=/user/instruments2025a07/output
-NUM_REDUCERS=50
+NUM_REDUCERS=8
 
-hdfs dfs -rm -r -skipTrash ${OUT_DIR} > /dev/null
+hdfs dfs -rm -r -skipTrash ${OUT_DIR} 
 
 yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
     -D mapred.job.name="Mixing IDs_Arthur_Chupakhin" \
