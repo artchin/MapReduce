@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OUT_DIR=/user/instruments2025a07/output
+OUT_DIR=/user/instruments2025a07/output_$(date +%s%N)
 NUM_REDUCERS=8
 
 hdfs dfs -rm -r -skipTrash ${OUT_DIR} 
