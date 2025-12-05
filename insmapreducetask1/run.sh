@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 OUT_DIR=/user/instruments2025a07/output_$(date +%s%N)
-NUM_REDUCERS=8
+NUM_REDUCERS=4
 
 hdfs dfs -rm -r -skipTrash ${OUT_DIR} 
 
@@ -12,6 +12,6 @@ yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
     -mapper mapper.py \
     -reducer reducer.py \
     -input /data/ids \
-    -output ${OUT_DIR} 2>&1
+    -output ${OUT_DIR} 
 
 hdfs dfs -cat ${OUT_DIR}/part-* | head -n 50
