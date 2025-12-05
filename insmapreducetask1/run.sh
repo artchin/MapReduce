@@ -12,6 +12,6 @@ yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
     -mapper mapper.py \
     -reducer reducer.py \
     -input /data/ids \
-    -output ${OUT_DIR} > /dev/nul
+    -output ${OUT_DIR} 
 
 hdfs dfs -cat ${OUT_DIR}/part-00000 | head -n 50
