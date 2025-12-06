@@ -1,7 +1,7 @@
 
 #!/usr/bin/env bash
 
-OUT_DIR=/user/instruments2025a07/output_$(date +%Y%m%d_%H%M%S)
+OUT_DIR=output_$(date +%Y%m%d_%H%M%S)
 NUM_REDUCERS=4
 
 yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
