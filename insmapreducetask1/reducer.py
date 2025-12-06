@@ -11,10 +11,10 @@ for line in sys.stdin:
     buffer.append(id)
 
     if len(buffer) >= batch_size:
-        print(', '.join(buffer))
+        print(','.join(buffer))
 
         buffer = []
         batch_size = random.randint (1, 5)
 
 if buffer:
-    print(', '.join(buffer))
+    print(','.join(buffer))
