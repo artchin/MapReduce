@@ -2,13 +2,11 @@
 
 STREAMING_JAR="/opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar"
 
-# Входные и выходные директории
+
 INPUT_DATA="/data/wiki/en_articles_part"  # Используем семпл, для полных данных: /data/wiki/en_articles
 OUTPUT_JOB1="/user/$(whoami)/bigrams_counts"
 
-# Удаляем выходные директории если они существуют
 hdfs dfs -rm -r -skipTrash ${OUTPUT_JOB1} 2>/dev/null
-hdfs dfs -rm -r -skipTrash ${OUTPUT_JOB2} 2>/dev/null
 
 echo "=== Запуск Job 1: Подсчёт биграмм по документам ==="
 hadoop jar ${STREAMING_JAR} \
