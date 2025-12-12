@@ -17,7 +17,7 @@ hadoop jar ${STREAMING_JAR} \
     -mapper mapper.py \
     -reducer reducer.py \
     -file mapper.py \
-    -file reducer.py
+    -file reducer.py > /dev/null
 
 if [ $? -ne 0 ]; then
     echo "Ошибка в Job 1"
