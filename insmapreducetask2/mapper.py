@@ -44,4 +44,4 @@ for line in sys.stdin:
     unique_bigrams = set(bigrams)
         
     for bigram in unique_bigrams:
-        print(f"{bigram}\{current_doc_id}")
+        print(f"{bigram}\t{current_doc_id}")
