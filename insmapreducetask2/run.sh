@@ -12,7 +12,7 @@ hdfs dfs -rm -r -skipTrash ${OUTPUT_JOB2} 2>/dev/null
 echo "=== Job 1: Подсчёт биграмм по документам ==="
 hadoop jar ${STREAMING_JAR} \
     -D mapreduce.job.name="Bigrams Count" \
-    -D mapreduce.job.reduces=1 \
+    -D mapreduce.job.reduces=8 \
     -input ${INPUT_DATA} \
     -output ${OUTPUT_JOB1} \
     -mapper mapper.py \
