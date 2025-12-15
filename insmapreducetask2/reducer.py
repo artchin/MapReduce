@@ -2,7 +2,7 @@
 import sys
 
 current_bigram = None
-doc_ids = set()
+count = 0
 
 for line in sys.stdin:
     line = line.strip()
@@ -10,20 +10,18 @@ for line in sys.stdin:
         continue
     
     try:
-        bigram, doc_id = line.split('\t')
+        bigram, _ = line.split('\t')  # игнорируем значение, просто считаем строки
     except ValueError:
         continue
     
     if current_bigram == bigram:
-        doc_ids.add(doc_id)
+        count += 1  # просто +1, без set!
     else:
         if current_bigram is not None:
-            count = len(doc_ids)
             print(f"{current_bigram}\t{count}")
         
         current_bigram = bigram
-        doc_ids = set([doc_id])
+        count = 1
 
 if current_bigram is not None:
-    count = len(doc_ids)
     print(f"{current_bigram}\t{count}")
