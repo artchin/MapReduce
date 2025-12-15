@@ -5,8 +5,8 @@ INPUT_DATA="/data/wiki/en_articles"
 OUTPUT_JOB1="/user/$(whoami)/bigrams_counts"
 OUTPUT_JOB2="/user/$(whoami)/bigrams_top10"
 
-hdfs dfs -rm -r -skipTrash ${OUTPUT_JOB1} 2>/dev/null
-hdfs dfs -rm -r -skipTrash ${OUTPUT_JOB2} 2>/dev/null
+hdfs dfs -rm -r -skipTrash ${OUTPUT_JOB1} >/dev/null
+hdfs dfs -rm -r -skipTrash ${OUTPUT_JOB2} >/dev/null
 
 hadoop jar ${STREAMING_JAR} \
     -D mapreduce.job.name="Bigrams Count" \
