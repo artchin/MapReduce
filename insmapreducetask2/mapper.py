@@ -3,6 +3,7 @@
 import sys
 import re
 
+current_doc_id = None
 
 def clean_text(text):
     text = re.sub(r'[^A-Za-z\s]', '', text)
