@@ -1,3 +1,5 @@
+
+
 #!/usr/bin/env python3
 import sys
 
@@ -10,7 +12,7 @@ for line in sys.stdin:
         continue
     
     try:
-        bigram, doc_id = line.split('\t')
+        bigram, cnt = line.split('\t')
         cnt = int(cnt)
     except ValueError:
         continue
@@ -26,4 +28,3 @@ for line in sys.stdin:
 
 if current_bigram is not None:
     print(f"{current_bigram}\t{count}")
-
