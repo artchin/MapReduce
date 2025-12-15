@@ -16,7 +16,6 @@ hadoop jar ${STREAMING_JAR} \
     -input ${INPUT_DATA} \
     -output ${OUTPUT_JOB1} \
     -mapper mapper.py \
-    -combiner reducer.py \
     -reducer reducer.py \
     -file mapper.py \
     -file reducer.py > /dev/null
