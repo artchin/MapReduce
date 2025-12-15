@@ -11,17 +11,18 @@ for line in sys.stdin:
     
     try:
         bigram, doc_id = line.split('\t')
+        cnt = int(cnt)
     except ValueError:
         continue
     
     if current_bigram == bigram:
-        count += 1 
+        count += cnt 
     else:
         if current_bigram is not None:
             print(f"{current_bigram}\t{count}")
         
         current_bigram = bigram
-        count = 1  
+        count = cnt
 
 if current_bigram is not None:
     print(f"{current_bigram}\t{count}")
